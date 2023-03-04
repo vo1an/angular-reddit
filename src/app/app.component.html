@@ -2,11 +2,16 @@
   <h3>Add a link</h3>
   <div class="title_container">
     <label for="title">Title :</label>
-    <input type="text" id="title">
+    <input type="text" id="title" #title />
   </div>
   <div class="link_container">
     <label for="link">link :</label>
-    <input type="text" id="link">
+    <input type="text" id="link" #link />
   </div>
-  <button class="submit_btn">submit</button>
+  <button class="submit_btn" (click)="add_article(title, link)">submit</button>
+</div>
+
+<!--article component-->
+<div>
+  <app-article *ngFor="let article of sortedArticle()" [article]="article"></app-article>
 </div>
